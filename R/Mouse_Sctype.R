@@ -32,7 +32,7 @@ source("https://raw.githubusercontent.com/natacow/sc-type/master/R/gene_sets_pre
 source("https://raw.githubusercontent.com/natacow/sc-type/master/R/sctype_score_.R")
 
 # DB file
-db_ <- "https://raw.githubusercontent.com/natacow/sc-type/master/sc_type_mouse_alltumours.xlsx";
+db_ <- "https://raw.githubusercontent.com/natacow/sc-type/master/mouse_sctype_markers.xlsx";
 tissue <- "Lung" # e.g. Immune system,Pancreas,Liver,Eye,Kidney,Brain,Lung,Adrenal,Heart,Intestine,Muscle,Placenta,Spleen,Stomach,Thymus 
 
 # prepare gene sets
