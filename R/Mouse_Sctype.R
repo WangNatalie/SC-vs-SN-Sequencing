@@ -39,10 +39,10 @@ tissue <- "Lung" # e.g. Immune system,Pancreas,Liver,Eye,Kidney,Brain,Lung,Adren
 gene_list <- gene_sets_prepare(db_, tissue)
 
 # check Seurat object version (scRNA-seq matrix extracted differently in Seurat v4/v5)
-seurat_package_v5 <- isFALSE('counts' %in% names(attributes(pbmc[["RNA"]])));
+seurat_package_v5 <- isFALSE('counts' %in% names(attributes(cells[["RNA"]])));
 
 # extract scaled scRNA-seq matrix
-scRNAseqData_scaled <- if (seurat_package_v5) as.matrix(pbmc[["RNA"]]$scale.data) else as.matrix(pbmc[["RNA"]]@scale.data)
+scRNAseqData_scaled <- if (seurat_package_v5) as.matrix(cells[["RNA"]]$scale.data) else as.matrix(cells[["RNA"]]@scale.data)
 
 # run ScType
 es.max <- sctype_score(scRNAseqData = scRNAseqData_scaled, scaled = TRUE, gs = gene_list$gs_positive, gs2 = gene_list$gs_negative)
