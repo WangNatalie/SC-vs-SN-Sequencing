@@ -52,5 +52,4 @@ es.max <- as.data.frame(t(es.max))
 Celltype <- colnames(es.max)[max.col(es.max)]
 es.max$scores <- apply(es.max, 1, max, na.rm=TRUE)
 es.max <- cbind(es.max, Celltype)
-es.max <- es.max[, -c(1:17)] # delete individual cell scores
 
