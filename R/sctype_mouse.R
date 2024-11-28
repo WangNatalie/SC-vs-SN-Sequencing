@@ -1,4 +1,4 @@
-mouse_sctype <- function(path_to_file){
+sctype_mouse <- function(path_to_file){
   
   cells.data <- Read10X(data.dir = path_to_file)
   cells <- CreateSeuratObject(counts = cells.data, project = "cells_mouse", min.cells = 3, min.features = 200)
