@@ -8,7 +8,7 @@ sctype_mouse <- function(path_to_file){
   library("HGNChelper")
   
   # Load the gene marker dataset
-  cells.data <- Read10X(data.dir = "filtered_feature_bc_matrix")
+  cells.data <- Read10X(data.dir = path_to_file)
   cells <- CreateSeuratObject(counts = cells.data, project = "cells_mouse", min.cells = 3, min.features = 200)
   
   # normalize data
