@@ -40,13 +40,7 @@ mouse_sctype <- function(path_to_file){
   
   # run ScType
   es.max <- sctype_score(scRNAseqData = scRNAseqData_scaled, scaled = TRUE, gs = gene_list$gs_positive, gs2 = gene_list$gs_negative)
-  
-  ## sort cells individually
-  es.max <- as.data.frame(t(es.max))
-  Celltype <- colnames(es.max)[max.col(es.max)]
-  es.max$scores <- apply(es.max, 1, max, na.rm=TRUE)
-  es.max <- cbind(es.max, Celltype)
-  
+   
   es.max
   
 }
